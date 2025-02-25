@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokenots - Pokedex</title>
+
+    <!-- Enlace a las hojas de estilo -->
+    <link rel="stylesheet" href="./Estilos/Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Estilos/pokedex.css">
+
+    <script>
+        // Muestra u oculta la barra de búsqueda
+        function toggleSearch() {
+            var searchInput = document.getElementById("search-input");
+            searchInput.style.display = (searchInput.style.display === "none" || searchInput.style.display === "") ? "inline-block" : "none";
+            if (searchInput.style.display === "inline-block") searchInput.focus(); // Activa el foco si se muestra
+        }
+
+        // Filtra los Pokenots por tipo
+        function filtrarPorTipo(tipo) {
+            document.querySelectorAll(".pokenot-row").forEach(row => {
+                row.style.display = row.dataset.tipo === tipo ? "table-row" : "none";
+            });
+        }
+
+        // Cuando la página carga, filtra por defecto a los de tipo "furitostado"
+        document.addEventListener("DOMContentLoaded", function() {
+            filtrarPorTipo('furitostado');
+        });
+    </script>
+</head>
+<body>
+    <!-- Encabezado con título y menú -->
+    <header>
+        <div class="header-content">
+            <h1>Pokenots</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="./test.html">Test</a></li>
+                    <li><a href="./cartas.html">Cartas</a></li>
+                    <li><a href="./index.html">Inicio</a></li>
+                </ul>
+
+                <!-- Barra de búsqueda oculta hasta que se activa -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Buscar..." style="display: none;">
+                    <button class="search-button" onclick="toggleSearch()"><i class="fas fa-search"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="pokedex-section">
+            <h2>Pokedex</h2>
+
+            <div class="pokedex-container">
+                <!-- Filtros por tipo -->
+                <aside class="type-filter">
+                    <ul>
+                        <li><a href="#" onclick="filtrarPorTipo('furitostado')">🔥 Furitostado</a></li>
+                        <li><a href="#" onclick="filtrarPorTipo('aguamón')">💧 Aguamón</a></li>
+                        <li><a href="#" onclick="filtrarPorTipo('hojaquín')">🌿 Hojaquín</a></li>
+                        <li><a href="#" onclick="filtrarPorTipo('voltizo')">⚡ Voltizo</a></li>
+                        <li><a href="#" onclick="filtrarPorTipo('toxicucho')">☠️ Toxicucho</a></li>
+                        <li><a href="#" onclick="filtrarPorTipo('normalardo')">🔘 Normalardo</a></li>
+                        <li><a href="#" onclick="filtrarPorTipo('terrón')">⛰️ Terrón</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Lista de Pokenots en tabla -->
+                <div class="pokemon-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Cada fila representa un Pokenot y tiene un tipo asignado -->
+                            <tr class="pokenot-row" data-tipo="toxicucho"><td>Zoobat </td><td>Usa el poder de la ceguera total para volar a toda velocidad… contra las paredes.</td></tr>
+                            <tr class="pokenot-row" data-tipo="furitostado"><td>Volpics </td><td>Su pelaje está hecho de fuego comprimido. No lo acaricies si aprecias tus cejas.</td></tr>
+                            <tr class="pokenot-row" data-tipo="aguamón"><td>WingleTough </td><td>Suave como una nube, pero con la misma resistencia que un papel mojado.</td></tr>
+                            <tr class="pokenot-row" data-tipo="toxicucho"><td>Venomfly </td><td>Sus alas desprenden polvos venenosos. Nadie sabe por qué sigue vivo si él también los respira.</td></tr>
+                            <tr class="pokenot-row" data-tipo="hojaquín"><td>Vilefume </td><td>Suelta un aroma que puede ser tóxico o delicioso, dependiendo de cuánto odies a tus vecinos.</td></tr>
+                            <tr class="pokenot-row" data-tipo="normalardo"><td>Sir Meow </td><td>No pelea, solo observa con desprecio hasta que sus enemigos se sienten inseguros y se rinden.</td></tr>
+                            <tr class="pokenot-row" data-tipo="terrón"><td>Dug </td><td>Excava túneles sin saber por qué. Probablemente esté huyendo de sus problemas.</td></tr>
+                            <tr class="pokenot-row" data-tipo="voltizo"><td>Peekachu </td><td>Parece una copia barata de otro Pokenot famoso. Niega todas las acusaciones.</td></tr>
+                            <tr class="pokenot-row" data-tipo="furitostado"><td>Eighttails </td><td>Tiene ocho colas de fuego. Usa siete de ellas para hacer malabares y la octava para quemar cosas sin querer.</td></tr>
+                            <tr class="pokenot-row" data-tipo="normalardo"><td>Clafaybul </td><td>Esponjoso y adorable, pero con una fuerza inexplicable en momentos de pánico.</td></tr>
+                            <tr class="pokenot-row" data-tipo="furitostado"><td>Chardlard </td><td>No es tan feroz como parece. En realidad, solo quiere que lo dejen dormir.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Pokenots FanPage</p>
+    </footer>
+</body>
+</html>

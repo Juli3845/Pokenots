@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokenots - ¿Qué Pokenot eres?</title>
+    <link rel="stylesheet" href="./Estilos/Style.css">
+    <link rel="stylesheet" href="./Estilos/Style_test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        function toggleSearch() {
+            var searchInput = document.getElementById("search-input");
+            if (searchInput.style.display === "none" || searchInput.style.display === "") {
+                searchInput.style.display = "inline-block";
+                searchInput.focus(); 
+            } else {
+                searchInput.style.display = "none";
+            }
+        }
+
+        function buscar() {
+            var searchTerm = document.getElementById("search-input").value;
+            if (searchTerm) {
+                alert("Buscando: " + searchTerm);
+            } else {
+                alert("Por favor, introduce un término de búsqueda.");
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Pokenots</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./cartas.html">Cartas</a></li>
+                    <li><a href="./pokedex.html">Pokedex</a></li>
+                 </ul>
+                 <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Buscar..." style="display: none;">
+                    <button class="search-button" onclick="toggleSearch()"><i class="fas fa-search"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="test-section">
+            <h2>Test: ¿Qué Pokenot eres?</h2>
+            <p>Un cuestionario absurdo que al final te dice qué Pokenot te representa.</p>
+            <form id="test-form">
+                
+                <div class="question">
+                    <p>¿Cómo describirías tu nivel de inteligencia?</p>
+                    <input type="radio" id="inteligencia-a" name="inteligencia" value="A">
+                    <label for="inteligencia-a">Inteligente pero solo cuando nadie me está viendo.</label><br>
+                    <input type="radio" id="inteligencia-b" name="inteligencia" value="B">
+                    <label for="inteligencia-b">¿Qué es inteligencia?</label><br>
+                    <input type="radio" id="inteligencia-c" name="inteligencia" value="C">
+                    <label for="inteligencia-c">Tengo mis momentos... pero son muy cortos.</label><br>
+                    <input type="radio" id="inteligencia-d" name="inteligencia" value="D">
+                    <label for="inteligencia-d">Más sabio que un Pokenot de nivel 2.</label>
+                </div>
+
+                <div class="question">
+                    <p>Si fueras un Pokenot, ¿cuál sería tu debilidad?</p>
+                    <input type="radio" id="debilidad-a" name="debilidad" value="A">
+                    <label for="debilidad-a">La procrastinación.</label><br>
+                    <input type="radio" id="debilidad-b" name="debilidad" value="B">
+                    <label for="debilidad-b">Los lunes.</label><br>
+                    <input type="radio" id="debilidad-c" name="debilidad" value="C">
+                    <label for="debilidad-c">Las matemáticas.</label><br>
+                    <input type="radio" id="debilidad-d" name="debilidad" value="D">
+                    <label for="debilidad-d">Todo lo anterior.</label>
+                </div>
+
+                <div class="question">
+                    <p>Elige un ataque especial ridículo:</p>
+                    <input type="radio" id="ataque-a" name="ataque" value="A">
+                    <label for="ataque-a">"Mirada incómoda" (hace que el rival se sienta raro y se retire).</label><br>
+                    <input type="radio" id="ataque-b" name="ataque" value="B">
+                    <label for="ataque-b">"Pisotón accidental" (hace daño pero a ti mismo).</label><br>
+                    <input type="radio" id="ataque-c" name="ataque" value="C">
+                    <label for="ataque-c">"Risa malvada" (no hace nada, pero suena intimidante).</label><br>
+                    <input type="radio" id="ataque-d" name="ataque" value="D">
+                    <label for="ataque-d">"Error 404" (desapareces del combate por 5 turnos).</label>
+                </div>
+
+                <div class="question">
+                    <p>Si fueras el jefe final de un videojuego, ¿cuál sería tu frase épica antes de la batalla?</p>
+                    <input type="radio" id="frase-a" name="frase" value="A">
+                    <label for="frase-a">"Prepárate para... lo que sea que estoy a punto de hacer."</label><br>
+                    <input type="radio" id="frase-b" name="frase" value="B">
+                    <label for="frase-b">"No me elegiste, el destino me puso aquí... y se equivocó."</label><br>
+                    <input type="radio" id="frase-c" name="frase" value="C">
+                    <label for="frase-c">"Solo lucho si me traes comida primero."</label><br>
+                    <input type="radio" id="frase-d" name="frase" value="D">
+                    <label for="frase-d">"Puedo perder, pero lo haré con estilo."</label>
+                </div>
+
+                <button type="submit">Descubre qué Pokenot eres</button>
+            </form>
+
+            <div id="result"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Pokenots FanPage</p>
+    </footer>
+    <script src="./JavaScrip/test.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokenots FanPage</title>
+
+    <!-- Enlace al archivo CSS principal -->
+    <link rel="stylesheet" href="./Estilos/Style.css">
+    
+    <!-- Enlace a Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        // Función para mostrar/ocultar la barra de búsqueda
+        function toggleSearch() {
+            var searchInput = document.getElementById("search-input");
+            if (searchInput.style.display === "none" || searchInput.style.display === "") {
+                searchInput.style.display = "inline-block";
+                searchInput.focus(); 
+            } else {
+                searchInput.style.display = "none";
+            }
+        }
+
+        // Función simple para mostrar un mensaje con el término de búsqueda
+        function buscar() {
+            var searchTerm = document.getElementById("search-input").value;
+            if (searchTerm) {
+                alert("Buscando: " + searchTerm);
+            } else {
+                alert("Por favor, introduce un término de búsqueda.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Pokenots</h1>
+            <nav>
+                <ul class="nav-links">
+                    <!-- Enlaces de navegación -->
+                    <li><a href="./test.html">Test</a></li>
+                    <li><a href="./cartas.html">Cartas</a></li>
+                    <li><a href="./pokedex.html">Pokedex</a></li>
+                </ul>
+
+                <!-- Contenedor de búsqueda -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Buscar..." style="display: none;">
+                    <button class="search-button" onclick="toggleSearch()"><i class="fas fa-search"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Reproductor de música personalizado -->
+        <div id="audio-player">
+            <audio id="reproductor">
+                <!-- Lista de canciones -->
+                <source src="./Musica/chiptune-grooving.mp3" type="audio/mp3">
+                <source src="./Musica/i-love-my-8-bit-game-console.mp3" type="audio/mp3">
+                <source src="./Musica/the-return-of-the-8-bit-era.mp3" type="audio/mp3">
+            </audio>
+
+            <div class="custom-controls">
+                <!-- Botones de control del reproductor -->
+                <button id="retroceder">⏪</button>
+                <button id="play-pause">▶️</button>
+                <button id="avanzar">⏩</button>
+            </div>
+
+            <!-- Barra de progreso del audio -->
+            <div class="progress-container">
+                <input type="range" id="barra-progreso" min="0" value="0" step="0.1">
+                <div class="tiempo">
+                    <span id="tiempo-actual">0:00</span> / <span id="tiempo-total">0:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección principal con imágenes de Pokenots -->
+        <section class="content">
+            <div class="item pokeball-container">
+                <img src="./Imagenes/Varias/pokeball.png" alt="Pokeball Cerrada" class="pokeball">
+                <img src="./Imagenes/Pokenots/RemoveBg/peekachu-removebg.png" alt="Peekachu" class="pokemon">
+                <div class="description">Peekachu</div>
+            </div>
+            <div class="item pokeball-container">
+                <img src="./Imagenes/Varias/pokeball.png" alt="Pokeball Cerrada" class="pokeball">
+                <img src="./Imagenes/Pokenots/RemoveBg/Charman-removebg.png" alt="Charman" class="pokemon">
+                <div class="description">Charman</div>
+            </div>
+            <div class="item pokeball-container">
+                <img src="./Imagenes/Varias/pokeball.png" alt="Pokeball Cerrada" class="pokeball">
+                <img src="./Imagenes/Pokenots/RemoveBg/Boolbiesore-removebg.png" alt="Boolbiesore" class="pokemon">
+                <div class="description">Boolbiesore</div>
+            </div>
+        </section>
+
+        <!-- Sección "Acerca de" con información de los Pokenots -->
+        <section class="about-us">
+            <h2>Acerca de Pokenots</h2>
+            <p>
+                Bienvenido al fascinante y completamente innecesario mundo de los <strong>Pokenots</strong>, criaturas que desafían la lógica, la biología y, en algunos casos, las leyes de la física.
+                A diferencia de esas otras criaturas coleccionables que todos conocemos (y que no mencionaremos por temas legales), los Pokenots no buscan la grandeza, la gloria ni las batallas épicas.
+                 En su lugar, se especializan en ser… bueno, ellos mismos, lo cual en la mayoría de los casos significa ser un estorbo para la humanidad.
+            </p>
+            <p>
+                <strong>¿Qué es un Pokenot?</strong><br>
+                Los Pokenots son entidades misteriosas que parecen haber sido diseñadas por alguien con mucho tiempo libre y poca supervisión. Algunos pueden volar, pero solo en la dirección equivocada. Otros pueden generar fuego, pero principalmente para incendiar cosas por accidente.
+                 Algunos incluso poseen habilidades extraordinarias como "ser una roca" o "hacer que tu comida sepa raro".
+            </p>
+            <p>
+                <strong>Clasificación Científica de los Pokenots</strong>
+            </p>
+            <ul>
+                <li><strong>Furitostado 🔥</strong> - Pokenots que generan calor, pero sin un propósito claro. Son expertos en derretir cosas que no deberían derretirse, como tus expectativas.</li>
+                <li><strong>Aguamón 💧</strong> - Capaces de controlar el agua, pero con cero precisión. Mojarán todo menos lo que querías mojar.</li>
+                <li><strong>Toxicucho ☠️</strong> - Emiten gases, polvos y sustancias misteriosas. El 99% de los científicos recomienda no tocarlos. El otro 1% ya está inconsciente.</li>
+                <li><strong>Hojaquín 🌿</strong> - Relacionados con la flora, estos Pokenots pueden hacer crecer hongos, liberar esporas o simplemente existir de forma fotosintética.</li>
+                <li><strong>Voltizo ⚡</strong> - Generan electricidad, pero nunca cuando realmente la necesitas. Un peligro para la tecnología y el sentido común.</li>
+                <li><strong>Terrón 🏜️</strong> - Cavadores compulsivos que crean túneles sin razón alguna. Expertos en llenar tus zapatos de arena.</li>
+                <li><strong>Normalardo 😐</strong> - No tienen habilidades especiales. Ni siquiera quieren estar aquí. </li>
+            </ul>
+            <p>
+                <strong>Historia y Origen</strong><br>
+                Los Pokenots fueron descubiertos cuando alguien tropezó con uno y dijo "¿Qué rayos es esto?". Desde entonces, su existencia ha sido aceptada con una mezcla de asombro, resignación y un poco de miedo. 
+                Se desconoce su origen exacto, pero algunos teóricos sugieren que son producto de la evolución… aunque también es posible que simplemente sean un error del universo que se niega a ser corregido.
+            </p>
+            <p>
+                <strong>¿Para qué sirven los Pokenots?</strong><br>
+                Buena pregunta. Nadie lo sabe con certeza. Algunos intentan entrenarlos, pero la mayoría simplemente los tolera. Otros los coleccionan porque, bueno, alguien tenía que hacerlo.
+                 Lo único seguro es que los Pokenots están aquí para quedarse (porque probablemente no saben cómo irse).
+            </p>
+            <p>
+                <strong>Únete a la comunidad de entrenadores sin criterio. Los Pokenots te esperan… aunque no les importa mucho.</strong>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Pokenots FanPage</p>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript para el reproductor de audio -->
+    <script src="./JavaScrip/audio.js"></script>
+
+</body>
+</html>
