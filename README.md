@@ -45,10 +45,6 @@ El sitio cuenta con un reproductor de música con botones de reproducción, paus
    ```
 2. Abre el archivo `index.html` en tu navegador.
 
-## 🔧 Mejoras Futuras
-- Agregar una sección de comunidad para que los usuarios compartan teorías sobre los Pokenots.
-- Implementar una base de datos para gestionar las cartas y la Pokedex de forma dinámica.
-- Habilitar una función de búsqueda avanzada.
 
 ## 📜 Licencia
 Este proyecto es solo con fines de entretenimiento. No está afiliado ni relacionado con ninguna franquicia oficial.
