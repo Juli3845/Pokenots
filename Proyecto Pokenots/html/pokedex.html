@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokenots - Pokedex</title>
+
+    <!-- Enlace a las hojas de estilo -->
+     <link rel="stylesheet" href="../Estilos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="stylesheet" href="../Estilos/pokedex.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        // Función para mostrar/ocultar la barra de búsqueda
+        function toggleSearch() {
+            var searchInput = document.getElementById("search-input");
+            searchInput.classList.toggle('d-none');
+            if (!searchInput.classList.contains('d-none')) {
+                searchInput.focus();
+            }
+        }
+
+        // Función para mostrar un mensaje con el término de búsqueda
+        function buscar() {
+            var searchTerm = document.getElementById("search-input").value;
+            alert(searchTerm ? "Buscando: " + searchTerm : "Por favor, introduce un término de búsqueda.");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <!-- Barra de navegación personalizada -->
+        <nav class="navbar navbar-dark py-4" style="background: none;">
+            <div class="container text-center">
+                <img src="../Imagenes/Head/Pokenots.png" alt="Logo de Pokenots" class="img-fluid" style="height: 100px; margin-left: -60px;">
+                <div class="d-flex justify-content-center gap-3 my-3">
+                    <a class="nav-link text-light" href="./test.html">Test</a>
+                    <a class="nav-link text-light" href="./cartas.html">Cartas</a>
+                    <a class="nav-link text-light" href="../index.html">Inicio</a>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <button class="search-button" onclick="toggleSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="text" id="search-input" class="form-control ms-2 d-none" placeholder="Buscar...">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <ul class="nav nav-tabs mt-4">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#furitostado">🔥 Furitostado</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#aguamon">💧 Aguamón</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#hojaquin">🌿 Hojaquín</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#voltizo">⚡ Voltizo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#toxicucho">☠️ Toxicucho</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#normalardo">🔘 Normalardo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#terron">⛰️ Terrón</a>
+        </li>
+    </ul>
+    
+    <div class="tab-content">
+        <div id="furitostado" class="tab-pane fade show active p-3">
+            <table class="table table-striped">
+                <thead><tr><th>Nombre</th><th>Descripción</th></tr></thead>
+                <tbody>
+                    <tr><td>Volpics</td><td>Su pelaje está hecho de fuego comprimido. No lo acaricies si aprecias tus cejas.</td></tr>
+                    <tr><td>Eighttails</td><td>Tiene ocho colas de fuego. Usa siete de ellas para hacer malabares y la octava para quemar cosas sin querer.</td></tr>
+                    <tr><td>Chardlard</td><td>No es tan feroz como parece. En realidad, solo quiere que lo dejen dormir.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <div id="aguamon" class="tab-pane fade p-3">
+            <table class="table table-striped">
+                <thead><tr><th>Nombre</th><th>Descripción</th></tr></thead>
+                <tbody>
+                    <tr><td>WingleTough</td><td>Suave como una nube, pero con la misma resistencia que un papel mojado.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <div id="hojaquin" class="tab-pane fade p-3">
+            <table class="table table-striped">
+                <thead><tr><th>Nombre</th><th>Descripción</th></tr></thead>
+                <tbody>
+                    <tr><td>Vilefume</td><td>Suelta un aroma que puede ser tóxico o delicioso, dependiendo de cuánto odies a tus vecinos.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <div id="voltizo" class="tab-pane fade p-3">
+            <table class="table table-striped">
+                <thead><tr><th>Nombre</th><th>Descripción</th></tr></thead>
+                <tbody>
+                    <tr><td>Peekachu</td><td>Parece una copia barata de otro Pokenot famoso. Niega todas las acusaciones.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <div id="toxicucho" class="tab-pane fade p-3">
+            <table class="table table-striped">
+                <thead><tr><th>Nombre</th><th>Descripción</th></tr></thead>
+                <tbody>
+                    <tr><td>Zoobat</td><td>Usa el poder de la ceguera total para volar a toda velocidad… contra las paredes.</td></tr>
+                    <tr><td>Venomfly</td><td>Sus alas desprenden polvos venenosos. Nadie sabe por qué sigue vivo si él también los respira.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <div id="normalardo" class="tab-pane fade p-3">
+            <table class="table table-striped">
+                <thead><tr><th>Nombre</th><th>Descripción</th></tr></thead>
+                <tbody>
+                    <tr><td>Sir Meow</td><td>No pelea, solo observa con desprecio hasta que sus enemigos se sienten inseguros y se rinden.</td></tr>
+                    <tr><td>Clafaybul</td><td>Esponjoso y adorable, pero con una fuerza inexplicable en momentos de pánico.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <div id="terron" class="tab-pane fade p-3">
+            <table class="table table-striped">
+                <thead><tr><th>Nombre</th><th>Descripción</th></tr></thead>
+                <tbody>
+                    <tr><td>Dug</td><td>Excava túneles sin saber por qué. Probablemente esté huyendo de sus problemas.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    <script src="../JavaScrip/js/bootstrap.bundle.min.js"> </script>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Pokenots FanPage</p>
+    </footer>
+</body>
+</html>

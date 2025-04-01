@@ -1,0 +1,400 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #000000; 
+    color: #ffffff; /* Color de texto principal */
+    line-height: 1.6;
+}
+
+/* /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/  */
+
+/* Header (Encabezado) */
+header {
+    background-color: #333;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #ddd;
+}
+
+.header-content {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #ea0000; /* Color llamativo */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/  */
+
+/* Reproductor de música */
+#audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.custom-controls button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.custom-controls button:hover {
+    background: #555;
+}
+
+/* /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/  */
+
+/* Barra de progreso de audio */
+.progress-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#barra-progreso {
+    width: 90%;
+    appearance: none;
+    background: #ddd;
+    height: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#barra-progreso::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.tiempo {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/  */
+
+/* Menú de navegación */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.search-button:focus {
+    outline: none;
+}
+
+.nav-link {
+    text-decoration: none; /* Quita el subrayado */
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    color: #aaa; /* Cambia el color al pasar el mouse */
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/  */
+
+/* Contenedor de búsqueda */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+#search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+.search-button:hover {
+    color: #333;
+}
+
+/* /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/  */
+
+/* Contenido principal */
+main {
+    padding: 30px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/  */
+
+/* Imágenes de Pokenots con Pokébolas */
+.item {
+    width: 30%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.pokeball-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.pokeball {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.pokemon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/  */
+
+/* Efecto al pasar el ratón */
+.pokeball-container:hover .pokeball {
+    transform: translateY(-100%);
+}
+
+.pokeball-container:hover .pokemon {
+    opacity: 1;
+    transform: scale(3.8);
+}
+
+.item .description {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Texto emergente al hacer hover */
+.hover-text {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: rgba(255, 255, 255, 0.9);
+   padding: 10px;
+   border-radius: 5px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   opacity: 0;
+   transition: opacity 0.3s ease;
+   z-index: 1; /* Asegura que el texto esté sobre la imagen */
+}
+
+.pokeball-container:hover .hover-text {
+    opacity: 1;
+}
+
+
+/* /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/  */
+
+
+/* Mejorar el diseño del lienzo */
+#dibujo-canvas {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    border-radius: 8px;
+    background-color: #ffffff; /* Fondo blanco para el lienzo */
+    margin-top: 30px; /* Mover el lienzo un poco más abajo */
+}
+
+#dibujo-canvas:hover {
+    transform: scale(1.05);
+}
+
+/* Mejorar los controles */
+#color-pincel,
+#grosor-pincel {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+#color-pincel {
+    cursor: pointer;
+}
+
+#clear-canvas {
+    background-color: #f44336;
+    color: white;
+    font-weight: bold;
+    font-size: 12px; /* Hacer el texto más pequeño en el botón */
+    padding: 6px 12px; /* Reducir tamaño del botón */
+    border-radius: 20px;
+}
+
+#clear-canvas:hover {
+    background-color: #d32f2f;
+}
+
+form {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los botones */
+button {
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.card-custom {
+    background-color: #474542; /* Color de fondo personalizado (naranja) */
+    color: white; /* Color de texto blanco */
+    border-radius: 15px; /* Bordes redondeados */
+}
+
+.bg-light-custom {
+    background-color: #474542; /* Color de fondo personalizado para la tarjeta */
+    border: 2px solid #ddd; /* Borde de la tarjeta */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+}
+
+.form-control {
+    border-radius: 10px; /* Bordes redondeados para los inputs */
+}
+
+.btn {
+    font-weight: bold; /* Negrita para los botones */
+}
+
+#dibujo-canvas {
+    border-radius: 10px; /* Bordes redondeados para el lienzo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+
+/* /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/  */
+
+/* Estilos para el acordeón "Acerca de" */
+.accordion-item {
+    border: 2px solid #fff; /* Borde blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espaciado entre elementos del acordeón */
+}
+
+.accordion-body {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para el cuerpo del acordeón */
+.accordion-item:hover .accordion-body {
+    background-color: #1a1a1a; /* Color similar al negro al pasar el mouse */
+}
+
+/* Estilos para los botones del acordeón */
+.accordion-button {
+    background-color: #333; /* Fondo de botón oscuro */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin borde */
+}
+
+.accordion-button:hover {
+    background-color: #555; /* Color más claro al pasar el mouse */
+}
+
+/* Estilos para el encabezado del acordeón */
+.accordion-header {
+    border-bottom: 2px solid #fff; /* Borde inferior blanco */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #333;
+    color: #fff;
+    border-top: 2px solid #555;
+}

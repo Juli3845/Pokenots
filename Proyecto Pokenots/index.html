@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokenots FanPage</title>
+
+    <!-- Enlaces a estilos CSS -->
+    <link rel="stylesheet" href="./Estilos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Estilos/Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        // Función para mostrar/ocultar la barra de búsqueda
+        function toggleSearch() {
+            var searchInput = document.getElementById("search-input");
+            searchInput.classList.toggle('d-none');
+            if (!searchInput.classList.contains('d-none')) {
+                searchInput.focus();
+            }
+        }
+
+        // Función para mostrar un mensaje con el término de búsqueda
+        function buscar() {
+            var searchTerm = document.getElementById("search-input").value;
+            alert(searchTerm ? "Buscando: " + searchTerm : "Por favor, introduce un término de búsqueda.");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <!-- Barra de navegación personalizada -->
+        <nav class="navbar navbar-dark py-4" style="background: none;">
+            <div class="container text-center">
+                <img src="./Imagenes/Head/Pokenots.png" alt="Logo de Pokenots" class="img-fluid" style="height: 100px; margin-left: -60px;">
+                <div class="d-flex justify-content-center gap-3 my-3">
+                    <a class="nav-link text-light" href="./html/test.html">Test</a>
+                    <a class="nav-link text-light" href="./html/cartas.html">Cartas</a>
+                    <a class="nav-link text-light" href="./html/pokedex.html">Pokedex</a>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <button class="search-button" onclick="toggleSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="text" id="search-input" class="form-control ms-2 d-none" placeholder="Buscar...">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Reproductor de música personalizado -->
+        <div id="audio-player">
+            <audio id="reproductor">
+                <source src="./Musica/chiptune-grooving.mp3" type="audio/mp3">
+                <source src="./Musica/i-love-my-8-bit-game-console.mp3" type="audio/mp3">
+                <source src="./Musica/the-return-of-the-8-bit-era.mp3" type="audio/mp3">
+            </audio>
+            <div class="custom-controls">
+                <button id="retroceder">⏪</button>
+                <button id="play-pause">▶️</button>
+                <button id="avanzar">⏩</button>
+            </div>
+            <div class="progress-container">
+                <input type="range" id="barra-progreso" min="0" value="0" step="0.1">
+                <div class="tiempo">
+                    <span id="tiempo-actual">0:00</span> / <span id="tiempo-total">0:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección principal con imágenes de Pokenots -->
+        <section class="content">
+            <div class="item pokeball-container">
+                <img src="./Imagenes/Varias/pokeball.png" alt="Pokeball Cerrada" class="pokeball">
+                <img src="./Imagenes/Pokenots/RemoveBg/peekachu-removebg.png" alt="Peekachu" class="pokemon">
+                <div class="description">Peekachu</div>
+            </div>
+            <div class="item pokeball-container">
+                <img src="./Imagenes/Varias/pokeball.png" alt="Pokeball Cerrada" class="pokeball">
+                <img src="./Imagenes/Pokenots/RemoveBg/Charman-removebg.png" alt="Charman" class="pokemon">
+                <div class="description">Charman</div>
+            </div>
+            <div class="item pokeball-container">
+                <img src="./Imagenes/Varias/pokeball.png" alt="Pokeball Cerrada" class="pokeball">
+                <img src="./Imagenes/Pokenots/RemoveBg/Boolbiesore-removebg.png" alt="Boolbiesore" class="pokemon">
+                <div class="description">Boolbiesore</div>
+            </div>
+        </section>
+
+
+    <!--Formulario APIs-->
+    <section id="add-pokenot" class="container mt-5">
+        <h2 class="text-center mb-4">Agregar un Pokenot</h2>
+        <form id="pokenot-form" class="p-4 border rounded shadow-lg bg-light-custom">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre del Pokenot</label>
+                <input type="text" id="nombre" class="form-control" placeholder="Nombre del Pokenot" required>
+            </div>
+            <div class="mb-3">
+                <label for="tipo" class="form-label">Tipo</label>
+                <input type="text" id="tipo" class="form-control" placeholder="Tipo" required>
+            </div>
+            <div class="mb-3">
+                <label for="valoracion" class="form-label">Valoración (1-5 estrellas)</label>
+                <input type="number" id="valoracion" class="form-control" placeholder="Valoración (1-5)" min="1" max="5" required>
+            </div>
+    
+            <!-- Canvas para dibujo -->
+            <div class="mb-3">
+                <label for="dibujo" class="form-label">Dibujo del Pokenot</label>
+                <canvas id="dibujo-canvas" width="400" height="300" class="border rounded" style="background-color: #ffffff;"></canvas>
+            </div>
+    
+            <!-- Controles para el dibujo -->
+            <div class="row mb-3">
+                <div class="col-6">
+                    <label for="color-pincel" class="form-label">Color del Pincel</label>
+                    <input type="color" id="color-pincel" class="form-control form-control-sm" value="#000000">
+                </div>
+                <div class="col-6">
+                    <label for="grosor-pincel" class="form-label">Grosor del Pincel</label>
+                    <input type="range" id="grosor-pincel" class="form-control form-control-sm" min="1" max="10" value="3">
+                </div>
+            </div>
+    
+            <div class="d-grid gap-2 mb-3">
+                <button type="button" id="clear-canvas" class="btn btn-danger btn-sm rounded-pill">
+                    <i class="fas fa-eraser"></i> Limpiar Lienzo
+                </button>
+            </div>
+    
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-success rounded-pill">Agregar Pokenot</button>
+            </div>
+        </form>
+    </section>
+    
+    
+        <!--Generar Respuesta-->
+    
+        <section id="generar-pokenot" class="container mt-5">
+            <h2 class="text-center mb-4">Generar Pokenot Aleatorio</h2>
+            <div class="card card-custom shadow-lg border-light">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Genera un Pokenot aleatorio</h5>
+                    <div class="mb-3 text-center">
+                        <img id="pokenot-imagen" src="" alt="Imagen del Pokenot" class="img-fluid rounded" style="max-width: 200px; display: none;">
+                        <p id="pokenot-nombre" class="mt-3" style="font-size: 1.25rem; font-weight: bold;"></p>
+                        <p id="pokenot-tipo"></p>
+                        <p id="pokenot-calificacion"></p>
+                    </div>
+                    <button id="generar-pokenot-btn" class="btn btn-light rounded-pill w-100">
+                        Generar
+                    </button>
+                </div>
+            </div>
+        </section>        
+        
+        
+
+        <!-- Accordion (Acerca de Pokenots) -->
+        <div class="accordion mt-4" id="acordeonPokenots">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acercaDe">
+                        Acerca de Pokenots
+                    </button>
+                </h2>
+                <div id="acercaDe" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <p>
+                            Bienvenido al fascinante y completamente innecesario mundo de los <strong>Pokenots</strong>, criaturas que desafían la lógica, la biología y, en algunos casos, las leyes de la física.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#queEsPokenot">
+                        ¿Qué es un Pokenot?
+                    </button>
+                </h2>
+                <div id="queEsPokenot" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <p>
+                            Los Pokenots son entidades misteriosas que parecen haber sido diseñadas por alguien con mucho tiempo libre y poca supervisión.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#clasificacion">
+                        Clasificación Científica de los Pokenots
+                    </button>
+                </h2>
+                <div id="clasificacion" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <ul>
+                            <li><strong>Furitostado 🔥</strong> - Generan calor sin un propósito claro.</li>
+                            <li><strong>Aguamón 💧</strong> - Capaces de controlar el agua, pero con cero precisión.</li>
+                            <li><strong>Toxicucho ☠️</strong> - Emiten sustancias misteriosas; se recomienda no tocarlos.</li>
+                            <li><strong>Hojaquín 🌿</strong> - Relacionados con la flora, pueden hacer crecer hongos.</li>
+                            <li><strong>Voltizo ⚡</strong> - Generan electricidad, pero nunca cuando realmente la necesitas.</li>
+                            <li><strong>Terrón 🏜️</strong> - Cavadores compulsivos que crean túneles sin razón alguna.</li>
+                            <li><strong>Normalardo 😐</strong> - No tienen habilidades especiales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#historia">
+                        Historia y Origen
+                    </button>
+                </h2>
+                <div id="historia" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <p>
+                            Los Pokenots fueron descubiertos cuando alguien tropezó con uno y dijo "¿Qué rayos es esto?".
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#utilidad">
+                        ¿Para qué sirven los Pokenots?
+                    </button>
+                </h2>
+                <div id="utilidad" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <p>
+                            Buena pregunta. Nadie lo sabe con certeza. Algunos intentan entrenarlos, pero la mayoría simplemente los tolera.
+                        </p>
+                        <p><strong>Únete a la comunidad de entrenadores sin criterio. Los Pokenots te esperan… aunque no les importa mucho.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Pokenots FanPage</p>
+    </footer>
+
+    <!-- Enlaces a scripts JavaScript -->
+    <script src="./JavaScrip/api.js"></script>
+    <script src="./JavaScrip/audio.js"></script>
+    <script src="./JavaScrip/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

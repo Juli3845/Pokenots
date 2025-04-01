@@ -1,0 +1,163 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #000000;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header (Encabezado) */
+header {
+    background-color: #333;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #ddd;
+}
+
+.header-content {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #ea0000; /* Color llamativo */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Menú de navegación */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.search-button:focus {
+    outline: none;
+}
+
+.nav-link {
+    text-decoration: none; /* Quita el subrayado */
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    color: #aaa; /* Cambia el color al pasar el mouse */
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Search */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+#search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+.search-button:hover {
+    color: #333;
+}
+
+/* Main Content */
+main {
+    padding: 30px;
+}
+
+.test-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.test-section h2 {
+    text-align: center;
+    color: #e44d26;
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+#test-form button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #5a96e3;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+#test-form button[type="submit"]:hover {
+    background-color: #346aa3;
+}
+
+#result {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #333;
+    color: #fff;
+    border-top: 2px solid #555;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokenots - Cartas</title>
+    <link rel="stylesheet" href="../Estilos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Estilos/Style.css">
+    <link rel="stylesheet" href="../Estilos/Style_Cartas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script>
+        // Función para mostrar/ocultar la barra de búsqueda
+        function toggleSearch() {
+            var searchInput = document.getElementById("search-input");
+            searchInput.classList.toggle('d-none');
+            if (!searchInput.classList.contains('d-none')) {
+                searchInput.focus();
+            }
+        }
+
+        // Función para mostrar un mensaje con el término de búsqueda
+        function buscar() {
+            var searchTerm = document.getElementById("search-input").value;
+            alert(searchTerm ? "Buscando: " + searchTerm : "Por favor, introduce un término de búsqueda.");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <!-- Barra de navegación personalizada -->
+        <nav class="navbar navbar-dark py-4" style="background: none;">
+            <div class="container text-center">
+                <img src="../Imagenes/Head/Pokenots.png" alt="Logo de Pokenots" class="img-fluid" style="height: 100px; margin-left: -60px;">
+                <div class="d-flex justify-content-center gap-3 my-3">
+                    <a class="nav-link text-light" href="./test.html">Test</a>
+                    <a class="nav-link text-light" href="../index.html">Inicio</a>
+                    <a class="nav-link text-light" href="./pokedex.html">Pokedex</a>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <button class="search-button" onclick="toggleSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="text" id="search-input" class="form-control ms-2 d-none" placeholder="Buscar...">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <section class="card-section">
+            <h2 class="text-center">Cartas</h2>
+            <div class="text-center mb-3">
+                <span class="badge bg-primary cursor-pointer" onclick="filtrarCartas('econ')">5 - 10 USD</span>
+                <span class="badge bg-primary cursor-pointer" onclick="filtrarCartas('medio')">10 - 20 USD</span>
+                <span class="badge bg-primary cursor-pointer" onclick="filtrarCartas('alto')">20 - 40 USD</span>
+                <span class="badge bg-primary cursor-pointer" onclick="filtrarCartas('premium')">40+ USD</span>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card card-item" data-categoria="econ">
+                        <img src="../Imagenes/Pokenots/econ/eggans.png" class="card-img-top" alt="eggans">
+                        <div class="card-body">
+                            <h5 class="card-title">Eggans</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card card-item" data-categoria="econ">
+                        <img src="../Imagenes/Pokenots/econ/DirtSlash.png" class="card-img-top" alt="DirtSlash">
+                        <div class="card-body">
+                            <h5 class="card-title">DirtSlash</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card card-item" data-categoria="econ">
+                        <img src="../Imagenes/Pokenots/econ/feeryo.png" class="card-img-top" alt="Feeryo">
+                        <div class="card-body">
+                            <h5 class="card-title">Feeryo</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card card-item" data-categoria="medio">
+                        <img src="../Imagenes/Pokenots/medio/Charman.png" class="card-img-top" alt="Charman">
+                        <div class="card-body">
+                            <h5 class="card-title">Charman</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card card-item" data-categoria="alto">
+                        <img src="../Imagenes/Pokenots/alto/Dug.png" class="card-img-top" alt="Dug">
+                        <div class="card-body">
+                            <h5 class="card-title">Dug</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card card-item" data-categoria="premium">
+                        <img src="../Imagenes/Pokenots/premium/blastoff.png" class="card-img-top" alt="Blastoff">
+                        <div class="card-body">
+                            <h5 class="card-title">Blastoff</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; 2025 Pokenots FanPage</p>
+    </footer>
+
+    <script src="../JavaScrip/js/jquery.min.js"></script> <!-- Cambiado a jQuery local -->
+    <script src="../JavaScrip/js/popper.min.js"></script> <!-- Cambiado a Popper.js local -->
+    <script src="../JavaScrip/js/bootstrap.min.js"></script> <!-- Cambiado a Bootstrap JS local -->
+</body>
+</html>
